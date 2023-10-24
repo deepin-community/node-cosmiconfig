@@ -1,4 +1,14 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+include /usr/share/dpkg/pkg-info.mk
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	babeljs-7 src -d dist --verbose --extensions .js,.ts --ignore '**/**/*.test.js,**/**/*.test.ts' --source-maps
+	tsc --project tsconfig.types.json

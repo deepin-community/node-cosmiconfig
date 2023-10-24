@@ -1,5 +1,148 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-cosmiconfig (7.1.0+ds1-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Update standards version to 4.6.1, no changes needed.
+  * New upstream version 7.1.0+ds1
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Sat, 26 Nov 2022 15:52:01 +0100
+
+node-cosmiconfig (7.0.1+ds1-2) unstable; urgency=medium
+
+  * Team upload
+  * Drop deprecated node-typescript-types dependency (Closes: #979780)
+
+ -- Yadd <yadd@debian.org>  Sun, 01 May 2022 13:00:34 +0200
+
+node-cosmiconfig (7.0.1+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 7.0.1+ds1 (Closes: #1007851)
+
+ -- Yadd <yadd@debian.org>  Fri, 18 Mar 2022 08:27:12 +0100
+
+node-cosmiconfig (7.0.0+ds1-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pirate Praveen ]
+  * Update minimum version of node-path-type for type definitions
+
+  [ Yadd ]
+  * Fix GitHub tags regex
+  * Update standards version to 4.6.0, no changes needed.
+  * Fix filenamemangle
+  * Add patch to workaround tsc update (Closes: #997723)
+
+ -- Yadd <yadd@debian.org>  Mon, 25 Oct 2021 12:12:46 +0200
+
+node-cosmiconfig (7.0.0+ds1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  * stop embed Node.js modules callsites import-fresh parent-module
+    (moved to package node-resolve-from);
+    stop build-depend on node-execa node-resolve-from node-tape;
+    (build-)depend on node-import-fresh;
+    build-depend on node-parent-module
+  * fix stop annotate node-parse-json as test-only build-dependency
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 01 Jan 2021 17:51:38 +0100
+
+node-cosmiconfig (7.0.0+~cs8.3.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix Breaks field (Closes: #976813)
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 08 Dec 2020 10:17:27 +0100
+
+node-cosmiconfig (7.0.0+~cs8.3.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * Bump debhelper compatibility level to 13
+  * Declare compliance with policy 4.5.1
+  * Add ctype=nodejs to component(s)
+  * Use dh-sequence-nodejs
+  * Replace path-type by dependency to node-path-type
+  * Components:
+    + replace @types/parse-json by dependency to
+      node-parse-json ≥ 5.1.0+~cs5.1.6~
+    + Install all in main nodejs dirs using dh-sequence-nodejs
+      (Closes: #976618)
+    + Add break against jest < 26.6.3+repack~
+  * New upstream version 7.0.0+~cs8.3.2
+  * Refresh patch
+  * Link needed tsc files during build
+  * Update dependencies
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 06 Dec 2020 14:45:23 +0100
+
+node-cosmiconfig (6.0.0+~cs16.3.1-2) unstable; urgency=medium
+
+  * Team upload.
+
+  * unhide embedded modules parent-module import-fresh
+    as virtual packages node-parent-module node-import-fresh;
+    build-depend on jq;
+    depend on node-callsites
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 05 Dec 2020 21:44:33 +0100
+
+node-cosmiconfig (6.0.0+~cs16.3.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Xavier Guimard ]
+  * Add "Rules-Requires-Root: no"
+  * Use uscan checksum
+  * Refresh patch
+  * Build with babel7 and tsc
+  * Embed components: path-type, @types/parse-json
+  * New upstream version 6.0.0+~cs16.3.1
+    really: 6.0.0+~3.1.0+~3.2.1+~2.0.0+~4.0.0+~4.0.0
+  * Update copyright
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 25 May 2020 11:29:25 +0200
+
+node-cosmiconfig (5.2.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Back to unstable after node-parse-json migration
+  * Switch build to pkg-js-tools
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 13 Aug 2019 22:21:22 +0200
+
+node-cosmiconfig (5.2.1-1) experimental; urgency=medium
+
+  * Team upload
+  * Add upstream/metadata
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.4.0
+  * Add debian/gbp.conf
+  * Embed callsites, import-fresh and parent-module
+  * New upstream version 5.2.1 (Closes: #920751)
+  * Switch install to pkg-js-tools
+  * Update debian/copyright
+  * Patch components tests to use tape instead of ava
+  * Enable component tests during build
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 08 Aug 2019 17:38:42 +0200
+
+node-cosmiconfig (3.1.0-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.1.4 (no changes needed)
+  * Bump debhelper compatibility level to 11
+  * Update vcs field to salsa
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 06 Jun 2018 22:03:43 +0530
+
+node-cosmiconfig (3.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #879731)
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 25 Oct 2017 13:16:54 +0530
