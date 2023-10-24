@@ -1,15 +1,39 @@
-Source: template-repository
-Section: unknown
+Source: node-cosmiconfig
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-babel7
+ , node-flow-remove-types
+ , node-import-fresh
+ , node-is-directory <!nocheck>
+ , node-parent-module <!nocheck>
+ , node-parse-json (>= 5.1.0+~cs5.1.6~)
+ , node-path-type (>= 4.0~) <!nocheck>
+ , node-typescript
+ , node-yaml <!nocheck>
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-cosmiconfig
+Vcs-Git: https://salsa.debian.org/js-team/node-cosmiconfig.git
+Homepage: https://github.com/davidtheclark/cosmiconfig#readme
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-cosmiconfig
+Architecture: all
+Depends: ${misc:Depends}
+ , node-import-fresh
+ , node-parse-json (>= 5.1.0+~cs5.1.6~)
+ , node-path-type (>= 4.0~)
+ , node-resolve-from
+ , node-yaml
+Provides: ${nodejs:Provides}
+Description: Find and load configuration from different locations
+ Find and load a configuration object from
+  - a `package.json` property (anywhere up the directory tree)
+  - a JSON or YAML "rc file" (anywhere up the directory tree)
+  - a `.config.js` CommonJS module (anywhere up the directory tree)
+ .
+ Node.js is an event-based server-side JavaScript engine.
